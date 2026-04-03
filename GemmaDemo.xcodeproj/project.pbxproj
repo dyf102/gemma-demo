@@ -13,7 +13,9 @@
 		27A4549376FE1ADE791A373F /* TaxFixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 8111D3A8D45B1F0CCD5E117D /* TaxFixture.json */; };
 		30019249A0AA204B633BBA82 /* llama.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46319B15AD7D54ACB148AE53 /* llama.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5ED7E5B8C6E0333211F68300 /* LlamaRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE6C9650EE4F148B8D4D2F1 /* LlamaRunner.swift */; };
+		6866A0F420B08EBD6A909695 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC3141930676B2AFC20794 /* SetupView.swift */; };
 		6BB04F0C17E8978375F24DCF /* GemmaDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274BB15DAD8B767413EADAD /* GemmaDemoApp.swift */; };
+		7FF3DCC4CDA34FF982A34961 /* TestSuiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3B3FDE04CE1A818C1FAFF4 /* TestSuiteView.swift */; };
 		BB42964EF099E90BBDBFEA05 /* ModelStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18EDE2D1C1654722CACECE /* ModelStoreTests.swift */; };
 		BF5FCEC5CF4C90DA799E8002 /* llama.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46319B15AD7D54ACB148AE53 /* llama.xcframework */; };
 		D731B021F6C9518F5FBBDE3C /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA2BA4573B2738565E7EF9 /* Types.swift */; };
@@ -22,6 +24,7 @@
 		E2A39BB24C92B7B760DA6109 /* TestSuiteEvalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F815D113DC281AB958E98E /* TestSuiteEvalTests.swift */; };
 		EC576C5CB83AA993D11E3FEC /* PromptBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198897083613AD2880406E05 /* PromptBuilderTests.swift */; };
 		F21FB0154CAD21C56042451B /* TestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F40478547572E3AC4D365A /* TestSuite.swift */; };
+		FBF54A709C570593F4FC2E99 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD39BA7637E490D66040A72 /* ChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		030ECF9BA4B8BAA47A24D423 /* GemmaDemo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GemmaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C3B3FDE04CE1A818C1FAFF4 /* TestSuiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuiteView.swift; sourceTree = "<group>"; };
+		0DD39BA7637E490D66040A72 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		0FDC3141930676B2AFC20794 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		198897083613AD2880406E05 /* PromptBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptBuilderTests.swift; sourceTree = "<group>"; };
 		31F40478547572E3AC4D365A /* TestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuite.swift; sourceTree = "<group>"; };
 		32DA766708AAE602D700E184 /* GemmaDemoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GemmaDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		569975000713C3C196F98B92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0DD39BA7637E490D66040A72 /* ChatView.swift */,
+				0FDC3141930676B2AFC20794 /* SetupView.swift */,
+				0C3B3FDE04CE1A818C1FAFF4 /* TestSuiteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		68353CB66860313898E169AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +155,7 @@
 				60942C1FB19B57FE34948076 /* Info.plist */,
 				EB4B79817BD33E53CDE137AF /* Core */,
 				FF6486B0BB0B9227817A2457 /* Resources */,
+				569975000713C3C196F98B92 /* Views */,
 			);
 			path = GemmaDemo;
 			sourceTree = "<group>";
@@ -251,12 +268,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBF54A709C570593F4FC2E99 /* ChatView.swift in Sources */,
 				6BB04F0C17E8978375F24DCF /* GemmaDemoApp.swift in Sources */,
 				5ED7E5B8C6E0333211F68300 /* LlamaRunner.swift in Sources */,
 				134FAE0D7B8AF9907182A285 /* MemoryGuard.swift in Sources */,
 				E2628DD9EBE899FA032489D1 /* ModelStore.swift in Sources */,
 				E0DDF2A3121B4308363BCD90 /* PromptBuilder.swift in Sources */,
+				6866A0F420B08EBD6A909695 /* SetupView.swift in Sources */,
 				F21FB0154CAD21C56042451B /* TestSuite.swift in Sources */,
+				7FF3DCC4CDA34FF982A34961 /* TestSuiteView.swift in Sources */,
 				D731B021F6C9518F5FBBDE3C /* Types.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
