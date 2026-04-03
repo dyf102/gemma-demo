@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05AEC282BCD11FDFDB9E0205 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61D9F9C0B4219EFA118ECA /* Placeholder.swift */; };
+		30019249A0AA204B633BBA82 /* llama.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46319B15AD7D54ACB148AE53 /* llama.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6BB04F0C17E8978375F24DCF /* GemmaDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274BB15DAD8B767413EADAD /* GemmaDemoApp.swift */; };
+		BF5FCEC5CF4C90DA799E8002 /* llama.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46319B15AD7D54ACB148AE53 /* llama.xcframework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		431170741D106308A2E1C714 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D54E70695AEF746FAFEB2F10 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7896E9D5F69CEEB963D0242B;
+			remoteInfo = GemmaDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BE5CA3E77FEDD81459484992 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				30019249A0AA204B633BBA82 /* llama.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		030ECF9BA4B8BAA47A24D423 /* GemmaDemo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GemmaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32DA766708AAE602D700E184 /* GemmaDemoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GemmaDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46319B15AD7D54ACB148AE53 /* llama.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = llama.xcframework; path = Frameworks/llama.xcframework; sourceTree = "<group>"; };
+		4F61D9F9C0B4219EFA118ECA /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		60942C1FB19B57FE34948076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9274BB15DAD8B767413EADAD /* GemmaDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemmaDemoApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93B645C91DBEDF4325AE8106 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5FCEC5CF4C90DA799E8002 /* llama.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68353CB66860313898E169AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				030ECF9BA4B8BAA47A24D423 /* GemmaDemo.app */,
+				32DA766708AAE602D700E184 /* GemmaDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C3481F0C63C237FFAE75DB6 = {
+			isa = PBXGroup;
+			children = (
+				F016E76FE8EFCC56F45CE976 /* GemmaDemo */,
+				9376CF4936633BC10594E9DF /* GemmaDemoTests */,
+				D872CD4C9C6AA403072241B9 /* Frameworks */,
+				68353CB66860313898E169AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9376CF4936633BC10594E9DF /* GemmaDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F61D9F9C0B4219EFA118ECA /* Placeholder.swift */,
+			);
+			path = GemmaDemoTests;
+			sourceTree = "<group>";
+		};
+		D872CD4C9C6AA403072241B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46319B15AD7D54ACB148AE53 /* llama.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F016E76FE8EFCC56F45CE976 /* GemmaDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9274BB15DAD8B767413EADAD /* GemmaDemoApp.swift */,
+				60942C1FB19B57FE34948076 /* Info.plist */,
+			);
+			path = GemmaDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7896E9D5F69CEEB963D0242B /* GemmaDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28E82D714A58F7D2360F88E3 /* Build configuration list for PBXNativeTarget "GemmaDemo" */;
+			buildPhases = (
+				DB1EC6FCF12A7A8718586BB3 /* Sources */,
+				93B645C91DBEDF4325AE8106 /* Frameworks */,
+				BE5CA3E77FEDD81459484992 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GemmaDemo;
+			packageProductDependencies = (
+			);
+			productName = GemmaDemo;
+			productReference = 030ECF9BA4B8BAA47A24D423 /* GemmaDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4F3ADBFC9E541BDFBB9AF48 /* GemmaDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59B8B88FA8263437304487B2 /* Build configuration list for PBXNativeTarget "GemmaDemoTests" */;
+			buildPhases = (
+				58C95036996C8DDF7D3B6076 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DE445C66A06B4810AF9956A /* PBXTargetDependency */,
+			);
+			name = GemmaDemoTests;
+			packageProductDependencies = (
+			);
+			productName = GemmaDemoTests;
+			productReference = 32DA766708AAE602D700E184 /* GemmaDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D54E70695AEF746FAFEB2F10 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 962D25E40DB9BA5F25D99E0F /* Build configuration list for PBXProject "GemmaDemo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6C3481F0C63C237FFAE75DB6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 68353CB66860313898E169AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7896E9D5F69CEEB963D0242B /* GemmaDemo */,
+				D4F3ADBFC9E541BDFBB9AF48 /* GemmaDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58C95036996C8DDF7D3B6076 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05AEC282BCD11FDFDB9E0205 /* Placeholder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB1EC6FCF12A7A8718586BB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BB04F0C17E8978375F24DCF /* GemmaDemoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8DE445C66A06B4810AF9956A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7896E9D5F69CEEB963D0242B /* GemmaDemo */;
+			targetProxy = 431170741D106308A2E1C714 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		000660740FCF09A890F2FD29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.slipcheck.GemmaDemoTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GemmaDemo.app/GemmaDemo";
+			};
+			name = Release;
+		};
+		7AF1941483AC7CE17DE1A13F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"Frameworks\"",
+				);
+				INFOPLIST_FILE = GemmaDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.slipcheck.GemmaDemo;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		819F4C24B10A3CA30EE9709B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A0CFE26787310FC07D7F5EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A7310A1581545FE3B109B71E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.slipcheck.GemmaDemoTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GemmaDemo.app/GemmaDemo";
+			};
+			name = Debug;
+		};
+		C05EBA2A99D24890BFD0354B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"Frameworks\"",
+				);
+				INFOPLIST_FILE = GemmaDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.slipcheck.GemmaDemo;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28E82D714A58F7D2360F88E3 /* Build configuration list for PBXNativeTarget "GemmaDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05EBA2A99D24890BFD0354B /* Debug */,
+				7AF1941483AC7CE17DE1A13F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		59B8B88FA8263437304487B2 /* Build configuration list for PBXNativeTarget "GemmaDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7310A1581545FE3B109B71E /* Debug */,
+				000660740FCF09A890F2FD29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		962D25E40DB9BA5F25D99E0F /* Build configuration list for PBXProject "GemmaDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0CFE26787310FC07D7F5EF7 /* Debug */,
+				819F4C24B10A3CA30EE9709B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D54E70695AEF746FAFEB2F10 /* Project object */;
+}
