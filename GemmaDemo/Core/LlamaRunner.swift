@@ -9,7 +9,6 @@ actor LlamaRunner {
 
     private var model: OpaquePointer?
     private var ctx: OpaquePointer?
-    private var sampler: UnsafeMutablePointer<llama_sampler>?
     private var isBusy = false
     private var shouldCancel = false
 
@@ -37,8 +36,8 @@ actor LlamaRunner {
 
         var ctxParams = llama_context_default_params()
         ctxParams.n_ctx = UInt32(config.nCtx)
-        ctxParams.n_batch = UInt32(config.nCtx)
-        ctxParams.n_ubatch = UInt32(config.nCtx)
+        ctxParams.n_batch = 512
+        ctxParams.n_ubatch = 512
         ctxParams.n_seq_max = 1
         ctxParams.n_threads = config.nThreads
         ctxParams.n_threads_batch = config.nThreads
@@ -48,24 +47,8 @@ actor LlamaRunner {
             throw LlamaError.loadFailed("llama_init_from_model returned nil")
         }
 
-        let samplerChainParams = llama_sampler_chain_default_params()
-        guard let chain = llama_sampler_chain_init(samplerChainParams) else {
-            llama_free(loadedCtx)
-            llama_model_free(loadedModel)
-            throw LlamaError.loadFailed("llama_sampler_chain_init returned nil")
-        }
-        guard let greedy = llama_sampler_init_greedy() else {
-            llama_sampler_free(chain)
-            llama_free(loadedCtx)
-            llama_model_free(loadedModel)
-            throw LlamaError.loadFailed("llama_sampler_init_greedy returned nil")
-        }
-
-        llama_sampler_chain_add(chain, greedy)
-
         model = loadedModel
         ctx = loadedCtx
-        sampler = chain
     }
 
     // MARK: - Infer
@@ -94,7 +77,7 @@ actor LlamaRunner {
         prompt: String,
         continuation: AsyncStream<String>.Continuation
     ) async throws {
-        guard let model, let ctx, let sampler else {
+        guard let model, let ctx else {
             throw LlamaError.modelNotLoaded
         }
         guard !isBusy else {
@@ -118,43 +101,59 @@ actor LlamaRunner {
             return
         }
 
-        llama_sampler_reset(sampler)
         if let memory = llama_get_memory(ctx) {
             llama_memory_clear(memory, true)
         }
 
-        var promptBatch = llama_batch_init(Int32(promptTokens.count), 0, 1)
-        defer { llama_batch_free(promptBatch) }
-
-        guard populate(batch: &promptBatch, tokens: promptTokens, startPos: 0, logitsOnLastOnly: true) else {
-            continuation.finish()
-            return
-        }
-
-        guard llama_decode(ctx, promptBatch) == 0 else {
-            continuation.finish()
-            return
+        // Encode prompt in batches of 512
+        let batchSize = 512
+        var pos = 0
+        while pos < promptTokens.count {
+            let chunk = Array(promptTokens[pos..<min(pos + batchSize, promptTokens.count)])
+            let isLast = (pos + chunk.count) >= promptTokens.count
+            var batch = llama_batch_init(Int32(chunk.count), 0, 1)
+            guard populate(batch: &batch, tokens: chunk, startPos: Int32(pos), logitsOnLastOnly: isLast) else {
+                llama_batch_free(batch)
+                continuation.finish()
+                return
+            }
+            let result = llama_decode(ctx, batch)
+            llama_batch_free(batch)
+            guard result == 0 else {
+                continuation.finish()
+                return
+            }
+            pos += chunk.count
         }
 
         let eosToken = llama_vocab_eos(vocab)
+        let nVocab = Int(llama_n_vocab(model))
         let startTime = Date()
         var generatedCount = 0
         var didEmitFirstToken = false
+        var nPast = Int32(promptTokens.count)
 
         while !shouldCancel {
-            let token = llama_sampler_sample(sampler, ctx, -1)
-            if token == eosToken || token == LLAMA_TOKEN_NULL {
-                break
+            // Greedy sampling: argmax over logits
+            guard let logits = llama_get_logits_ith(ctx, -1) else { break }
+            var bestToken: llama_token = 0
+            var bestLogit: Float = logits[0]
+            for i in 1..<nVocab {
+                let l = logits[i]
+                if l > bestLogit {
+                    bestLogit = l
+                    bestToken = llama_token(i)
+                }
             }
+
+            if bestToken == eosToken || bestToken == LLAMA_TOKEN_NULL { break }
 
             if !didEmitFirstToken {
                 firstTokenLatency = Date().timeIntervalSince(startTime)
                 didEmitFirstToken = true
             }
 
-            llama_sampler_accept(sampler, token)
-
-            let piece = tokenPiece(for: token, vocab: vocab)
+            let piece = tokenPiece(for: bestToken, vocab: vocab)
             if !piece.isEmpty {
                 continuation.yield(piece)
             }
@@ -162,21 +161,15 @@ actor LlamaRunner {
             generatedCount += 1
 
             var nextBatch = llama_batch_init(1, 0, 1)
-            guard populate(
-                batch: &nextBatch,
-                tokens: [token],
-                startPos: Int32(promptTokens.count + generatedCount - 1),
-                logitsOnLastOnly: true
-            ) else {
+            guard populate(batch: &nextBatch, tokens: [bestToken], startPos: nPast, logitsOnLastOnly: true) else {
                 llama_batch_free(nextBatch)
                 break
             }
-
             let decodeResult = llama_decode(ctx, nextBatch)
             llama_batch_free(nextBatch)
-            guard decodeResult == 0 else {
-                break
-            }
+            guard decodeResult == 0 else { break }
+
+            nPast += 1
 
             let elapsed = Date().timeIntervalSince(startTime)
             if generatedCount > 1 && elapsed > 0 {
@@ -217,16 +210,12 @@ actor LlamaRunner {
             count = runTokenize(into: &tokens)
         }
 
-        guard count > 0 else {
-            return []
-        }
-
+        guard count > 0 else { return [] }
         return Array(tokens.prefix(Int(count)))
     }
 
     private func tokenPiece(for token: llama_token, vocab: OpaquePointer) -> String {
         var capacity = 256
-
         while capacity <= 16_384 {
             var buffer = [CChar](repeating: 0, count: capacity)
             let written = buffer.withUnsafeMutableBufferPointer { rawBuffer in
@@ -239,17 +228,14 @@ actor LlamaRunner {
                     false
                 )
             }
-
             if written >= 0 {
                 return String(
                     bytes: buffer.prefix(Int(written)).map { UInt8(bitPattern: $0) },
                     encoding: .utf8
                 ) ?? ""
             }
-
             capacity = max(capacity * 2, Int(-written))
         }
-
         return ""
     }
 
@@ -280,16 +266,10 @@ actor LlamaRunner {
     }
 
     private func unload() {
-        if let sampler {
-            llama_sampler_free(sampler)
-            self.sampler = nil
-        }
-
         if let ctx {
             llama_free(ctx)
             self.ctx = nil
         }
-
         if let model {
             llama_model_free(model)
             self.model = nil
