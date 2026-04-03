@@ -1,0 +1,14 @@
+{
+  "tax_year": 2024,
+  "documents": [
+    { "type": "T4", "issuer": "Employer Co", "box14": 85000, "box22": 12400, "box16": 4190 },
+    { "type": "T5", "issuer": "TD Bank", "box13": 1240, "box15": 80 },
+    { "type": "RRSP_receipt", "issuer": "RBC", "amount": 6000 }
+  ],
+  "onboarding": {
+    "had_employment": true,
+    "had_investments": true,
+    "made_rrsp": true,
+    "had_freelance": false
+  }
+}
