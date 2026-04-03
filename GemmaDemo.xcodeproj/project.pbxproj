@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		05AEC282BCD11FDFDB9E0205 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61D9F9C0B4219EFA118ECA /* Placeholder.swift */; };
-		14A1B2C3D4E5F60718293A4B /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1B2C3D4E5F60718293A4B /* Types.swift */; };
-		14B1C2D3E4F5061728394A5B /* MemoryGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1C2D3E4F5061728394A5B /* MemoryGuard.swift */; };
-		14C1D2E3F405162738495A6B /* MemoryGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C1D2E3F405162738495A6B /* MemoryGuardTests.swift */; };
+		134FAE0D7B8AF9907182A285 /* MemoryGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15BE7BBC9DAA38CF889BB8 /* MemoryGuard.swift */; };
+		174F54E9AEBC0A04D8FDF98B /* MemoryGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E42ACCD21D2FB8E642F375 /* MemoryGuardTests.swift */; };
+		27A4549376FE1ADE791A373F /* TaxFixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 8111D3A8D45B1F0CCD5E117D /* TaxFixture.json */; };
 		30019249A0AA204B633BBA82 /* llama.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46319B15AD7D54ACB148AE53 /* llama.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5ED7E5B8C6E0333211F68300 /* LlamaRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE6C9650EE4F148B8D4D2F1 /* LlamaRunner.swift */; };
 		6BB04F0C17E8978375F24DCF /* GemmaDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274BB15DAD8B767413EADAD /* GemmaDemoApp.swift */; };
+		BB42964EF099E90BBDBFEA05 /* ModelStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18EDE2D1C1654722CACECE /* ModelStoreTests.swift */; };
 		BF5FCEC5CF4C90DA799E8002 /* llama.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46319B15AD7D54ACB148AE53 /* llama.xcframework */; };
+		D731B021F6C9518F5FBBDE3C /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA2BA4573B2738565E7EF9 /* Types.swift */; };
+		E0DDF2A3121B4308363BCD90 /* PromptBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C5A62B4B8D8ECC6337100 /* PromptBuilder.swift */; };
+		E2628DD9EBE899FA032489D1 /* ModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96D3230C495911FB98A0A2 /* ModelStore.swift */; };
+		E2A39BB24C92B7B760DA6109 /* TestSuiteEvalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F815D113DC281AB958E98E /* TestSuiteEvalTests.swift */; };
+		EC576C5CB83AA993D11E3FEC /* PromptBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198897083613AD2880406E05 /* PromptBuilderTests.swift */; };
+		F21FB0154CAD21C56042451B /* TestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F40478547572E3AC4D365A /* TestSuite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,14 +50,22 @@
 
 /* Begin PBXFileReference section */
 		030ECF9BA4B8BAA47A24D423 /* GemmaDemo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GemmaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		24A1B2C3D4E5F60718293A4B /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		24B1C2D3E4F5061728394A5B /* MemoryGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGuard.swift; sourceTree = "<group>"; };
-		24C1D2E3F405162738495A6B /* MemoryGuardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGuardTests.swift; sourceTree = "<group>"; };
+		198897083613AD2880406E05 /* PromptBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptBuilderTests.swift; sourceTree = "<group>"; };
+		31F40478547572E3AC4D365A /* TestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuite.swift; sourceTree = "<group>"; };
 		32DA766708AAE602D700E184 /* GemmaDemoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GemmaDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46319B15AD7D54ACB148AE53 /* llama.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = llama.xcframework; path = Frameworks/llama.xcframework; sourceTree = "<group>"; };
 		4F61D9F9C0B4219EFA118ECA /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		60942C1FB19B57FE34948076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8111D3A8D45B1F0CCD5E117D /* TaxFixture.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TaxFixture.json; sourceTree = "<group>"; };
 		9274BB15DAD8B767413EADAD /* GemmaDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemmaDemoApp.swift; sourceTree = "<group>"; };
+		9ACA2BA4573B2738565E7EF9 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		9D15BE7BBC9DAA38CF889BB8 /* MemoryGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGuard.swift; sourceTree = "<group>"; };
+		A6E42ACCD21D2FB8E642F375 /* MemoryGuardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGuardTests.swift; sourceTree = "<group>"; };
+		C77C5A62B4B8D8ECC6337100 /* PromptBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptBuilder.swift; sourceTree = "<group>"; };
+		D0F815D113DC281AB958E98E /* TestSuiteEvalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuiteEvalTests.swift; sourceTree = "<group>"; };
+		ED18EDE2D1C1654722CACECE /* ModelStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelStoreTests.swift; sourceTree = "<group>"; };
+		FB96D3230C495911FB98A0A2 /* ModelStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelStore.swift; sourceTree = "<group>"; };
+		FBE6C9650EE4F148B8D4D2F1 /* LlamaRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LlamaRunner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,15 +80,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B2C3D4E5F60718293A4B5C6 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				24A1B2C3D4E5F60718293A4B /* Types.swift */,
-				24B1C2D3E4F5061728394A5B /* MemoryGuard.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		68353CB66860313898E169AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +102,11 @@
 		9376CF4936633BC10594E9DF /* GemmaDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				24C1D2E3F405162738495A6B /* MemoryGuardTests.swift */,
+				A6E42ACCD21D2FB8E642F375 /* MemoryGuardTests.swift */,
+				ED18EDE2D1C1654722CACECE /* ModelStoreTests.swift */,
 				4F61D9F9C0B4219EFA118ECA /* Placeholder.swift */,
+				198897083613AD2880406E05 /* PromptBuilderTests.swift */,
+				D0F815D113DC281AB958E98E /* TestSuiteEvalTests.swift */,
 			);
 			path = GemmaDemoTests;
 			sourceTree = "<group>";
@@ -109,14 +119,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB4B79817BD33E53CDE137AF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FBE6C9650EE4F148B8D4D2F1 /* LlamaRunner.swift */,
+				9D15BE7BBC9DAA38CF889BB8 /* MemoryGuard.swift */,
+				FB96D3230C495911FB98A0A2 /* ModelStore.swift */,
+				C77C5A62B4B8D8ECC6337100 /* PromptBuilder.swift */,
+				31F40478547572E3AC4D365A /* TestSuite.swift */,
+				9ACA2BA4573B2738565E7EF9 /* Types.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		F016E76FE8EFCC56F45CE976 /* GemmaDemo */ = {
 			isa = PBXGroup;
 			children = (
-				1B2C3D4E5F60718293A4B5C6 /* Core */,
 				9274BB15DAD8B767413EADAD /* GemmaDemoApp.swift */,
 				60942C1FB19B57FE34948076 /* Info.plist */,
+				EB4B79817BD33E53CDE137AF /* Core */,
+				FF6486B0BB0B9227817A2457 /* Resources */,
 			);
 			path = GemmaDemo;
+			sourceTree = "<group>";
+		};
+		FF6486B0BB0B9227817A2457 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8111D3A8D45B1F0CCD5E117D /* TaxFixture.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +159,7 @@
 			buildConfigurationList = 28E82D714A58F7D2360F88E3 /* Build configuration list for PBXNativeTarget "GemmaDemo" */;
 			buildPhases = (
 				DB1EC6FCF12A7A8718586BB3 /* Sources */,
+				52D366D10630F442B6E3E0C6 /* Resources */,
 				93B645C91DBEDF4325AE8106 /* Frameworks */,
 				BE5CA3E77FEDD81459484992 /* Embed Frameworks */,
 			);
@@ -190,13 +223,27 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		52D366D10630F442B6E3E0C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27A4549376FE1ADE791A373F /* TaxFixture.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58C95036996C8DDF7D3B6076 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14C1D2E3F405162738495A6B /* MemoryGuardTests.swift in Sources */,
+				174F54E9AEBC0A04D8FDF98B /* MemoryGuardTests.swift in Sources */,
+				BB42964EF099E90BBDBFEA05 /* ModelStoreTests.swift in Sources */,
 				05AEC282BCD11FDFDB9E0205 /* Placeholder.swift in Sources */,
+				EC576C5CB83AA993D11E3FEC /* PromptBuilderTests.swift in Sources */,
+				E2A39BB24C92B7B760DA6109 /* TestSuiteEvalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,9 +251,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14B1C2D3E4F5061728394A5B /* MemoryGuard.swift in Sources */,
-				14A1B2C3D4E5F60718293A4B /* Types.swift in Sources */,
 				6BB04F0C17E8978375F24DCF /* GemmaDemoApp.swift in Sources */,
+				5ED7E5B8C6E0333211F68300 /* LlamaRunner.swift in Sources */,
+				134FAE0D7B8AF9907182A285 /* MemoryGuard.swift in Sources */,
+				E2628DD9EBE899FA032489D1 /* ModelStore.swift in Sources */,
+				E0DDF2A3121B4308363BCD90 /* PromptBuilder.swift in Sources */,
+				F21FB0154CAD21C56042451B /* TestSuite.swift in Sources */,
+				D731B021F6C9518F5FBBDE3C /* Types.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +276,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,7 +433,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
